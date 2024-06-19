@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <div class="container">
+        <h2>Calculadora de Factorial</h2>
+        <input type="number" id="numberInput" placeholder="Introduce un número" min="1">
+        <button onclick="calcularFactorial()">Calcular</button>
+        <div class="result">
+            <p>Resultado: <span id="result"></span></p>
+        </div>
+    </div>
+
+    <script>
+         function calcularFactorial() {
+        const inputNumber = document.getElementById('numberInput').value;
+        const number = parseInt(inputNumber);
+
+        if (isNaN(number) || number < 1) {
+            alert('Por favor, introduce un número válido mayor o igual a 1.');
+            return;
+        }
+
+        let factorial = 1;
+        for (let i = number; i > 1; i--) {
+            factorial *= i;
+        }
+
+        document.getElementById('result').innerText = factorial;
+    }
+    </script>
+</body>
+</html>
